@@ -215,7 +215,23 @@ def prevSmallest(num):
             stack.append(i)
     return ans
 # print(prevSmallest([6,2,5,4,1,5,6]))
-
+#or______________________________________________________________
+def prevsmallest(num):
+    stack=[]
+    ans=[]
+    for i in range(0,len(num)):
+        while stack!=[] and num[stack[-1]]>=num[i]:
+            stack.pop()
+        if stack==[]:
+            stack.append(i)
+            ans.append(-1)
+        else:
+            ans.append(stack[-1])
+            stack.append(i)
+            
+    return ans
+#print(prevsmallest([4,8,6,5]))
+______________________________________________________________________
 #==========================================
 #Next Smallest Element
 #==========================================
@@ -233,6 +249,25 @@ def nextSmallest(num):
             stack.append(i)
     return ans[::-1]
 # print(nextSmallest([6,2,5,4,1,5,6]))
+
+________________________________OR________________________________________________
+def Nextsmallest(num):
+    stack=[]
+    ans=[]
+    for i in range(len(num)-1,-1,-1):
+        while stack!=[] and num[stack[-1]]>=num[i]:
+            stack.pop()
+        if stack==[]:
+            stack.append(i)
+            ans.append(len(num))
+        else:
+            ans.append(stack[-1])
+            stack.append(i)
+            
+    return ans[::-1]
+print(Nextsmallest([4,8,6,5]))
+
+_____________________________________________________________________________________________
 
 #=============================================
 #Largest Rectangular Area in a Histogram
