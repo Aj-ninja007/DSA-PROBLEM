@@ -19,4 +19,31 @@ class Solution:
 sol = Solution()
 print(sol.intToRoman(989643791))  # Output: "MCMXCIV"
 
+
+
+
+
+
+
+
+
+
+
+
+
+def sub_findSumZero(l):
+    m={}
+    s=0
+    for i in range(len(l)):
+        s+=l[i]
+        if s==0:
+            return l[:i+1]
+        if s in m:
+            si=m[s]+1
+            return l[si:i+1]
+        m[s]=i
+        print(m)
+l=[4,2,-3,1,6]
+print(sub_findSumZero(l))
+
     
